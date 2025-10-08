@@ -5,81 +5,210 @@
   <title>Control J Studios | Inicio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f6f8fc; color: #222; }
-    header { background: #222e50; color: #fff; padding: 2.5rem 0 1.5rem 0; text-align: center; position: relative; }
-    .logo-img {
-      width: 70px;
-      height: 70px;
-      object-fit: contain;
-      vertical-align: middle;
-      margin-bottom: 0.7rem;
-      /* Puedes ajustar estos valores para tamaño y separación */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f3f5fa;
+      color: #232a35;
     }
-    .logo { font-size: 2.5rem; font-weight: bold; letter-spacing: 2px; display: inline-block; vertical-align: middle; margin-left: 1rem; }
-    .subtitle { font-size: 1.25rem; margin-top: 0.5rem; }
-    main { max-width: 700px; margin: 2rem auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 2.5rem; }
-    h2 { color: #1259c3; margin-top: 0; }
-    .products, .contact { margin-bottom: 2.5rem; }
-    ul.products-list { list-style: none; padding: 0; }
-    ul.products-list li { margin: 1rem 0; font-size: 1.1rem; }
-    ul.products-list li span { font-weight: bold; color: #1259c3; }
-    .contact-info a { color: #1259c3; text-decoration: none; margin-right: 1.2rem; font-weight: 500; }
-    .contact-info a:hover { text-decoration: underline; }
-    footer { background: #222e50; color: #fff; text-align: center; padding: 2rem 0 1rem 0; margin-top: 2rem; }
-    .footer-links a { color: #ffd700; margin: 0 1.4rem; text-decoration: none; font-weight: bold; }
-    .footer-links a:hover { text-decoration: underline; }
+
+    header {
+      background: linear-gradient(120deg, #232a35 80%, #1259c3 100%);
+      padding: 2.5rem 0 1.5rem 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .logo-container img {
+      width: 160px;
+      height: auto;
+      margin-bottom: 1.2rem;
+      filter: drop-shadow(0 2px 12px rgba(18,89,195,0.11));
+      border-radius: 18px;
+      background: #fff;
+      padding: 12px;
+    }
+
+    .title {
+      font-size: 2.3rem;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 8px rgba(18,89,195,0.15);
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: #e0e6f7;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 2.5rem auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 26px rgba(18,89,195,0.08);
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      color: #1259c3;
+      margin-top: 0;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .products-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin: 2rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .products-list li {
+      background: #f3f5fb;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px rgba(18,89,195,0.09);
+      font-size: 1.12rem;
+      color: #232a35;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .products-list li span {
+      color: #1259c3;
+      font-weight: bold;
+      font-size: 1.15rem;
+    }
+
+    .contact-info {
+      margin: 2rem 0 0 0;
+      font-size: 1.07rem;
+    }
+
+    .contact-info a {
+      color: #1259c3;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .contact-info a:hover {
+      color: #232a35;
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #232a35;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0 1rem 0;
+      margin-top: 2rem;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      box-shadow: 0 -2px 10px rgba(18,89,195,0.07);
+    }
+
+    .footer-links {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .footer-links a {
+      color: #ffd700;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
     @media (max-width: 800px) {
       main { padding: 1rem; }
-      .logo { font-size: 2rem; }
-      .logo-img { width: 48px; height: 48px; }
+      .logo-container img { width: 100px; }
+      .title { font-size: 1.7rem; }
+      .products-list { flex-direction: column; gap: 0.7rem; }
     }
   </style>
 </head>
 <body>
   <header>
-    <!-- Logo imagen -->
-    <img src="img/LogoClaro.png" alt="Logo Control J Studios" class="logo-img">
-    <div class="logo">Control J Studios</div>
-    <div class="subtitle">Innovación y desarrollo de soluciones digitales</div>
+    <div class="logo-container">
+      <img src="img/LogoClaro.png" alt="Logo Control J Studios">
+      <div class="title">Control J Studios</div>
+      <div class="subtitle">Innovación y desarrollo de soluciones digitales</div>
+    </div>
   </header>
   <main>
     <section class="description">
       <p>
-        Somos <strong>Control J Studios</strong> (<em>Ctrl + J Studios</em>), una empresa dedicada a crear aplicaciones y productos digitales que potencian la productividad, organización y creativida[...]
+        <strong>Control J Studios</strong> (<em>Ctrl + J Studios</em>) es una empresa dedicada al desarrollo de aplicaciones y productos digitales que potencian la productividad, organización y creatividad.
       </p>
     </section>
     <section class="products">
       <h2>Nuestros productos</h2>
       <ul class="products-list">
-        <li><span>List Min</span> — App para listas, tareas rápidas y organización personal.</li>
+        <li>
+          <span>📝 List Min</span>
+          App para listas, tareas rápidas y organización personal.
+        </li>
         <!-- Agrega otros productos/apps aquí -->
         <!-- Ejemplo:
-        <li><span>NoteMaker</span> — Herramienta para crear y compartir notas fácilmente.</li>
-        <li><span>GestorPro</span> — Plataforma para administrar proyectos y equipos.</li>
+        <li>
+          <span>📒 NoteMaker</span>
+          Herramienta para crear y compartir notas fácilmente.
+        </li>
+        <li>
+          <span>🎮 GestorPro</span>
+          Plataforma para administrar proyectos y equipos.
+        </li>
         -->
       </ul>
     </section>
     <section class="contact">
       <h2>Contacto</h2>
       <div class="contact-info">
-        <a href="mailto:soportecontroljstudios@gmail.com">📧 soportecontroljstudios@gmail.com</a>
+        <a href="mailto:soporte@controljstudios.com">📧 Email</a>
         <a href="https://wa.me/5219632666678" target="_blank">💬 WhatsApp</a>
-        <a href="" target="_blank">📸 Instagram</a>
-        <!-- Agrega tus redes sociales reales aquí -->
+        <a href="https://instagram.com/controljstudios" target="_blank">📸 Instagram</a>
+        <!-- Actualiza los enlaces con tus datos reales -->
       </div>
-      <p>¿Tienes preguntas, propuestas o necesitas soporte? ¡Contáctanos!</p>
+      <p>¿Tienes dudas, propuestas o necesitas soporte? ¡Contáctanos!</p>
     </section>
   </main>
   <footer>
     <div class="footer-links">
-      <span>Consulta los términos y condiciones de nuestras aplicaciones:</span><br><br>
-      <a href="List Min/termsListMin">List Min</a>
-      <!-- Más enlaces según tus carpetas/apps:
+      <span>Términos y condiciones de nuestras aplicaciones:</span><br><br>
+      <a href="List Min/termsListMin.html">List Min</a>
+      <!-- Más enlaces según tus apps/carpeta:
       <a href="notemaker/">NoteMaker</a>
       <a href="gestorpro/">GestorPro</a>
       -->
     </div>
-    <div style="margin-top:1.5rem;">
+    <div>
       &copy; 2025 Control J Studios. Todos los derechos reservados.
     </div>
   </footer>
